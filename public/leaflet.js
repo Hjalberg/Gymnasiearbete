@@ -15,7 +15,7 @@ var Boat_icon_L = L.icon({
 });
 
 document.addEventListener("DOMContentLoaded", async function(){
-    map = L.map('map').setView([57.687, 11.89], 13);
+    map = L.map('map').setView([57.687, 11.89], 10);
 
     L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
         maxZoom: 19,
