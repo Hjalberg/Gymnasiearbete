@@ -38,14 +38,26 @@ document.addEventListener("DOMContentLoaded", async function(){
 
 function setMarket_Atlantica(data){
     Message_MessageType=data.Atlantica.MessageType
+    if (data.Atlantica.Message[Message_MessageType].Cog <= 179.9){
+        Icon_symbol=Boat_icon_R
+    }
+    else if (data.Atlantica.Message[Message_MessageType].Cog > 180){
+        Icon_symbol=Boat_icon_L
+    }
     Icon_Message="<b>Atlantica</b><br>Kurs: "+data.Atlantica.Message[Message_MessageType].Cog+"º<br>Hastighet: "+data.Atlantica.Message[Message_MessageType].Sog+" kn<br>Senast uppdaterad: "+ data.Atlantica.MetaData.time_utc
-    var marker = L.marker([data.Atlantica.MetaData.latitude, data.Atlantica.MetaData.longitude]).addTo(map)
+    var marker = L.marker([data.Atlantica.MetaData.latitude, data.Atlantica.MetaData.longitude], {icon: Icon_symbol}).addTo(map)
     marker.bindPopup(Icon_Message).openPopup();
 }
 function setMarket_Gratitude(data){    
     Message_MessageType=data.Gratitude.MessageType
+    if (data.Gratitude.Message[Message_MessageType].Cog <= 179.9){
+        Icon_symbol=Boat_icon_R
+    }
+    else if (data.Gratitude.Message[Message_MessageType].Cog > 180){
+        Icon_symbol=Boat_icon_L
+    }
     Icon_Message="<b>Gratitude</b><br>Kurs: "+data.Gratitude.Message[Message_MessageType].Cog+"º<br>Hastighet: "+data.Gratitude.Message[Message_MessageType].Sog+" kn<br>Senast uppdaterad: "+ data.Gratitude.MetaData.time_utc
-    var marker = L.marker([data.Gratitude.MetaData.latitude, data.Gratitude.MetaData.longitude]).addTo(map)
+    var marker = L.marker([data.Gratitude.MetaData.latitude, data.Gratitude.MetaData.longitude], {icon: Icon_symbol}).addTo(map)
     marker.bindPopup(Icon_Message).openPopup();
 }
 function setMarket_Gratia(data){
