@@ -1,4 +1,4 @@
-var data = "hej";
+var data = "";
 //ALT TVÅ.
 // SÄTT UPP EN TIMAD EVENT SOM KOLLAR OM DET FINNS NY DATA PÅ SERVERN.
 async function getData() {
